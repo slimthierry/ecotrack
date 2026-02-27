@@ -1,0 +1,13 @@
+export { apiClient, configureAuth } from './client';
+export { authApi } from './endpoints/auth';
+export { activitiesApi } from './endpoints/activities';
+export { challengesApi } from './endpoints/challenges';
+export { achievementsApi } from './endpoints/achievements';
+export { dashboardApi } from './endpoints/dashboard';
+export { reportsApi } from './endpoints/reports';
+export { useLogin, useRegister, useCurrentUser } from './hooks/useAuth';
+export { useActivities, useCreateActivity, useDeleteActivity, useActivitySummary } from './hooks/useActivities';
+export { useChallenges, useMyChallenges, useJoinChallenge, useLeaderboard } from './hooks/useChallenges';
+export { useAchievements, useUserAchievements } from './hooks/useAchievements';
+export { useDashboard, useTrends, useBreakdown, useEcoTips } from './hooks/useDashboard';
+export { useWeeklyReport, useMonthlyReport } from './hooks/useReports';
