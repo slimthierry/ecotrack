@@ -1,8 +1,8 @@
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.core.exceptions import BadRequestError, UnauthorizedError
-from app.core.security import create_access_token, hash_password, verify_password
+from app.auth.exceptions import BadRequestError, UnauthorizedError
+from app.auth.security import create_access_token, hash_password, verify_password
 from app.models.user_models import User
 from app.schemas.auth_schemas import TokenResponse
 from app.schemas.user_schemas import UserCreate, UserResponse

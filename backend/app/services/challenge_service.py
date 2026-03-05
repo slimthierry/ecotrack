@@ -4,7 +4,7 @@ from uuid import UUID
 from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.core.exceptions import BadRequestError, NotFoundError
+from app.auth.exceptions import BadRequestError, NotFoundError
 from app.models.challenge_models import Challenge, UserChallenge
 from app.models.user_models import User
 from app.schemas.challenge_schemas import (

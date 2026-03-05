@@ -3,12 +3,11 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api.v1 import router as v1_router
+from app.loggers import setup_logging
+from app.routes import app_router
 from app.config.database import engine
 from app.config.redis import close_redis
 from app.models.base import Base
-
-
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Application lifespan: startup and shutdown events."""
@@ -29,8 +28,6 @@ async def lifespan(app: FastAPI):
     # Shutdown: close connections
     await engine.dispose()
     await close_redis()
-
-
 app = FastAPI(
     title="EcoTrack API",
     description="Carbon footprint tracker with gamification. Track your activities, join challenges, and earn achievements.",
@@ -49,8 +46,6 @@ app.add_middleware(
 
 # Include API v1 router
 app.include_router(v1_router, prefix="/api/v1")
-
-
 @app.get("/health")
 async def health_check() -> dict:
     """Health check endpoint."""

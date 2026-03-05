@@ -4,7 +4,7 @@ from uuid import UUID
 from sqlalchemy import delete, func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.core.exceptions import BadRequestError, NotFoundError
+from app.auth.exceptions import BadRequestError, NotFoundError
 from app.models.activity_models import Activity, ActivityCategory
 from app.schemas.activity_schemas import (
     ActivityCreate,
